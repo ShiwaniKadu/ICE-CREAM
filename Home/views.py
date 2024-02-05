@@ -1,6 +1,6 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,redirect
 from datetime import datetime
-from Home.models import Contact
+from Home.models import *
 from django.contrib import messages
 
 # Create your views here.
@@ -30,3 +30,26 @@ def contact(request):
        
 
     return render(request, "contact.html")
+
+def Icecream(request):
+    if request.method == "POST":
+
+        data = request.POST
+        IceCream_image = request.FILES.get("IceCream_image")
+        IceCream_name = data.get("IceCream_name")
+        IceCream_description = data.get("IceCream_description")
+
+        IceCream.objects.create(
+            IceCream_image=IceCream_image,
+            IceCream_name=IceCream_name,
+            IceCream_description=IceCream_description
+            )
+        return redirect("/")
+    
+    queryset = IceCream.objects.all()
+
+    if request.GET.get("search"):
+        queryset=queryset.filter(IceCream_name__icontains = request.GET.get("search"))
+    context = {"icecream": queryset}
+        
+    return render(request, "icecream.html",context)

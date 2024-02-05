@@ -1,12 +1,14 @@
 from django.contrib import admin
 from django.urls import path
-from Home import views
+from Home.views import *
+
 
 urlpatterns = [
-    path('', views.index,name="home"),
-    path("about", views.about,name="about"),
-    path("services", views.services,name="services"),
-    path("contact", views.contact,name="contact"),
+    path('', index,name="home"),
+    path("about/", about,name="about"),
+    path("services/", services,name="services"),
+    path("contact/",contact,name="contact"),
+    path("Icecream/", Icecream,name="Icecream"),
 
     
 
