@@ -4,12 +4,9 @@ from Home.views import *
 
 
 urlpatterns = [
-    path('', index,name="home"),
-    path("about/", about,name="about"),
-    path("services/", services,name="services"),
-    path("contact/",contact,name="contact"),
-    path("Icecream/", Icecream,name="Icecream"),
-
-    
-
+    path("", index, name="home"),
+    path("about/", about, name="about"),
+    path("services/", services, name="services"),
+    path("contact/", contact, name="contact"),
+    path("icecream/", icecream, name="Icecream"),
 ]
