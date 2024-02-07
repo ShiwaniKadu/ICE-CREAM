@@ -51,13 +51,11 @@ def icecream(request):
         print(icecream_name)
         print(icecream_description)
         IceCream.objects.create(
-<<<<<<< HEAD
             icecream_image=icecream_image,
             icecream_name=icecream_name,
             icecream_description=icecream_description,
         )
         return redirect("/icecream/")
-=======
             IceCream_image=IceCream_image,
             IceCream_name=IceCream_name,
             IceCream_description=IceCream_description,
@@ -67,7 +65,7 @@ def icecream(request):
 >>>>>>> b3feee1fd108148c237e1bbace5b1878fb6550ae
     queryset = IceCream.objects.all()
     if request.GET.get("search"):
-<<<<<<< HEAD
+
         queryset = queryset.filter(icecream_name__icontains = request.GET.get("search"))
     context = {"icecreams" : queryset}
     return render(request, "icecream.html",context)
@@ -99,9 +97,9 @@ def update_icecream(request, id):
     context = {"icecream" : queryset}
 
     return render(request ,"update_icecream.html",context)
-=======
+
         queryset = queryset.filter(IceCream_name__icontains=request.GET.get("search"))
     context = {"icecream": queryset}
 
     return render(request, "icecream.html", context)
->>>>>>> b3feee1fd108148c237e1bbace5b1878fb6550ae
+
