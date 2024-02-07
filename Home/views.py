@@ -36,10 +36,7 @@ def contact(request):
 
     return render(request, "contact.html")
 
-<<<<<<< HEAD
-=======
 
->>>>>>> b3feee1fd108148c237e1bbace5b1878fb6550ae
 def icecream(request):
     if request.method == "POST":
 
@@ -56,13 +53,12 @@ def icecream(request):
             icecream_description=icecream_description,
         )
         return redirect("/icecream/")
-            IceCream_image=IceCream_image,
-            IceCream_name=IceCream_name,
-            IceCream_description=IceCream_description,
+            icecream_image=icecream_image,
+            icecream_name=icecream_name,
+            icecream_description=icecream_description,
         )
         return redirect("/")
 
->>>>>>> b3feee1fd108148c237e1bbace5b1878fb6550ae
     queryset = IceCream.objects.all()
     if request.GET.get("search"):
 
