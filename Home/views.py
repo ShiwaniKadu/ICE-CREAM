@@ -53,11 +53,7 @@ def icecream(request):
             icecream_description=icecream_description,
         )
         return redirect("/icecream/")
-            icecream_image=icecream_image,
-            icecream_name=icecream_name,
-            icecream_description=icecream_description,
-        )
-        return redirect("/")
+            
 
     queryset = IceCream.objects.all()
     if request.GET.get("search"):
@@ -94,8 +90,5 @@ def update_icecream(request, id):
 
     return render(request ,"update_icecream.html",context)
 
-        queryset = queryset.filter(IceCream_name__icontains=request.GET.get("search"))
-    context = {"icecream": queryset}
-
-    return render(request, "icecream.html", context)
+  
 
