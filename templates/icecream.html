@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block start%}
+{% block body%}
 
 <div class="container">
   <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
@@ -11,8 +11,8 @@
       <input name="IceCream_name" required type ="text" class="form-control">
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" name ="IceCream_description" class="form-label">Ice-Cream description</label>
-      <textarea class="form-control"></textarea>
+      <label for="exampleInputPassword1"  class="form-label">Ice-Cream description</label>
+      <textarea  class="form-control" name ="IceCream_description" required></textarea>
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Ice-Cream Image</label>
@@ -22,6 +22,48 @@
     
     <button type="submit" class="btn btn-success">Add Receipe</button>
   </form>
+  <hr>
+  <div class = "mt-5">
+    <div class = "mx-auto col-6">
+      <form>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Search Ice-Cream</label>
+        <input name="search" value="{{icecream.icecream_name}}" required type ="text" class="form-control">
+      </div>
+      <button type = "submit" class = "btn btn-primary">Search</button>
+      </form>
+
+    </div>
+
+  </div>
+   
+   <table class="table mt-5">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Ice-Cream Name</th>
+      <th scope="col">Ice-Cream Description</th>
+      <th scope="col">Image</th>
+      <th scope="col">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {% for icecream in icecreams %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{icecream.icecream_name}}</td>
+      <td>{{icecream.icecream_description}}</td>
+      <td><img src="/media/{{icecream.icecream_image}}" style="height:100px"></td>
+      <td>
+        <a href="/delete-icecream/{{icecream.id}}/" class = "btn btn-danger m-2">Delete</button>
+        <a href="/update-icecream/{{icecream.id}}/" class = "btn btn-success">Update</button>
+
+      </td>
+    </tr>
+    {% endfor %}
+   </tbody>
+</table>
 </div>
 
 {% endblock %}

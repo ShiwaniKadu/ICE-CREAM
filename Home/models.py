@@ -17,7 +17,7 @@ class Contact(models.Model):
     
 class IceCream(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True,blank=True)
-    IceCream_name = models.CharField(max_length=100)
-    IceCream_description = models.TextField()
-    IceCream_image = models.ImageField(upload_to="ice-cream")
-    IceCream_view_count = models.IntegerField(default=1)    
+    icecream_name = models.CharField(max_length=100)
+    icecream_description = models.TextField()
+    icecream_image = models.ImageField(upload_to="ice-cream")
+    icecream_view_count = models.IntegerField(default=1)    
