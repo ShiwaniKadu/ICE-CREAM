@@ -1,37 +1,45 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from datetime import datetime
 from .models import *
 from django.contrib import messages
 from django.http import HttpResponse
 
+
 # Create your views here.
 def index(request):
-    messages.success(request,"This is a test messages")
+    messages.success(request, "This is a test messages")
     return render(request, "index.html")
-    
-   
+
+
 def about(request):
-    #return HttpResponse("This is about page")
+    # return HttpResponse("This is about page")
     return render(request, "about.html")
 
+
 def services(request):
-    #return HttpResponse("This is services page")
+    # return HttpResponse("This is services page")
     return render(request, "services.html")
 
+
 def contact(request):
-    #return HttpResponse("This is contact page")
-    if request.method =="POST":
-        name=request.POST.get("name")
-        email=request.POST.get("email")
-        phone=request.POST.get("phone")
-        desc=request.POST.get("desc")
-        contact=Contact(name=name,email=email,phone=phone,desc=desc,date=datetime.today())
+    # return HttpResponse("This is contact page")
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        phone = request.POST.get("phone")
+        desc = request.POST.get("desc")
+        contact = Contact(
+            name=name, email=email, phone=phone, desc=desc, date=datetime.today()
+        )
         contact.save()
-        messages.success(request,"Your message has been sent!")
-       
+        messages.success(request, "Your message has been sent!")
 
     return render(request, "contact.html")
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b3feee1fd108148c237e1bbace5b1878fb6550ae
 def icecream(request):
     if request.method == "POST":
 
@@ -43,13 +51,23 @@ def icecream(request):
         print(icecream_name)
         print(icecream_description)
         IceCream.objects.create(
+<<<<<<< HEAD
             icecream_image=icecream_image,
             icecream_name=icecream_name,
             icecream_description=icecream_description,
         )
         return redirect("/icecream/")
+=======
+            IceCream_image=IceCream_image,
+            IceCream_name=IceCream_name,
+            IceCream_description=IceCream_description,
+        )
+        return redirect("/")
+
+>>>>>>> b3feee1fd108148c237e1bbace5b1878fb6550ae
     queryset = IceCream.objects.all()
     if request.GET.get("search"):
+<<<<<<< HEAD
         queryset = queryset.filter(icecream_name__icontains = request.GET.get("search"))
     context = {"icecreams" : queryset}
     return render(request, "icecream.html",context)
@@ -81,3 +99,9 @@ def update_icecream(request, id):
     context = {"icecream" : queryset}
 
     return render(request ,"update_icecream.html",context)
+=======
+        queryset = queryset.filter(IceCream_name__icontains=request.GET.get("search"))
+    context = {"icecream": queryset}
+
+    return render(request, "icecream.html", context)
+>>>>>>> b3feee1fd108148c237e1bbace5b1878fb6550ae

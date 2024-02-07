@@ -7,6 +7,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
+<<<<<<< HEAD
     path('', index,name="home"),
     path("about/", about,name="about"),
     path("services/", services,name="services"),
@@ -24,3 +25,11 @@ if settings.DEBUG:
 
 urlpatterns+=staticfiles_urlpatterns()
 
+=======
+    path("", index, name="home"),
+    path("about/", about, name="about"),
+    path("services/", services, name="services"),
+    path("contact/", contact, name="contact"),
+    path("icecream/", icecream, name="Icecream"),
+]
+>>>>>>> b3feee1fd108148c237e1bbace5b1878fb6550ae
