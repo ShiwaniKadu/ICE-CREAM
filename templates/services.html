@@ -1,3 +1,57 @@
 {% extends "base.html" %}
-{% block title %}services{% endblock title%} 
-{% block body %} This is my services block{% endblock body%} 
+{% block title %}Services{% endblock title %}
+{% block body %}
+
+<style>
+    .position-relative {
+    position: relative;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #1a1717; /* Text color */
+    z-index: 1; /* Ensure text is above image */
+    padding: 20px;
+}
+
+.text-overlay h1 {
+    font-size: 3rem; /* Adjust as needed */
+}
+
+.service-section {
+    background-color: rgba(245, 237, 241, 0.7); /* Semi-transparent black background */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.service-section h2 {
+    color: #FF5733; /* Orange text color for section headings */
+}
+
+.service-section p {
+    color: #080808; /* White text color */
+    line-height: 1.6; /* Improved readability with increased line height */
+}
+
+</style>
+<div class="container-fluid px-0 position-relative">
+    <img src="http://localhost:8000/static/img/icecream11.jpg" alt="Ice Cream" width="100%" height="100%" onclick="saveImage()">
+    <div class="text-overlay">
+        <h1 class="text-center">Our Services</h1>
+        <div class="service-section">
+            <h2>Ice Cream</h2>
+            <p>Indulge in our handcrafted ice cream creations made from the finest ingredients sourced locally whenever possible.</p>
+        </div>
+        <div class="service-section">
+            <h2>Ice Cream Pack</h2>
+            <p>Take home our specially curated ice cream packs, perfect for sharing with family and friends or enjoying solo!</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
