@@ -1,3 +1,41 @@
 {% extends "base.html" %}
 {% block title %}about{% endblock title%} 
-{% block body %} This is my about block{% endblock body%} 
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,">
+    <title>About Ice Cream Dream</title>
+    <style>
+        body { 
+              background-color: rgb(187, 211, 217); 
+          }
+    </style>
+    <img src="http://localhost:8000/static/img/Icecream4.jpg" alt="Ice Cream" width="100%" height="100%">
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to Ice Cream Dream!</h1>
+        <br>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>At Ice Cream Dream, we believe in the power of delicious frozen treats to bring joy and happiness to people's lives. Our mission is to create memorable experiences through our delectable ice cream creations, crafted with love and passion.</p>
+            <br>
+            <h3>Our Story</h3>
+            <br>
+            <p>Ice Cream Dream was born out of a shared love for ice cream and a desire to spread smiles one scoop at a time. Inspired by childhood memories of chasing after the ice cream truck on hot summer days, our founders set out to create a haven for ice cream enthusiasts of all ages.</p>
+            <!-- Add more sections as needed -->
+            <!-- Add key features, community involvement, meet the team, and contact sections -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Ice Cream Dream</p>
+    </footer>
+</body>
+</html>
+
+{% endblock body%} 
