@@ -20,7 +20,12 @@ def services(request):
     # return HttpResponse("This is services page")
     return render(request, "services.html")
 
-
+def services(request):
+    # return HttpResponse("This is services page")
+    return render(request, "services.html")
+def services(request):
+    # return HttpResponse("This is services page")
+    return render(request, "services.html")
 def contact(request):
     # return HttpResponse("This is contact page")
     if request.method == "POST":
