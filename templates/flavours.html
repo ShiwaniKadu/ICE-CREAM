@@ -1,4 +1,109 @@
 {% extends "base.html" %}
 {% block title %}Flavours{% endblock title %}
 {% block body %}
+<style>
+body {
+    background-color: rgb(246, 210, 103);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.flavors {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.flavor {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.flavor img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.flavor h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.flavor p {
+    margin: 0;
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Flavors</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+    <header>
+        <h1>Our Delicious Flavors</h1>
+    </header>
+    <section class="flavors">
+        <div class="flavor">
+            <h2>Choclate Flavor</h2>
+            <img src="http://localhost:8000/static/img/flavor1.jpg" alt="Ice Cream" width="90%" height="85%" onclick="saveImage()">
+        </div>
+        <div class="flavor">
+            <h2>Vanilla Flavor</h2>
+            <img src="http://localhost:8000/static/img/flavour2.jpg" alt="Ice Cream" width="100%" height="80%" onclick="saveImage()">
+
+        </div>
+        <div class="flavor">
+            <h2>Strawberry Flavor</h2>
+            <img src="http://localhost:8000/static/img/flavor3.jpg" alt="Ice Cream" width="100%" height="80%" onclick="saveImage()">
+        </div>
+        <div class="flavor">
+            <h2>Frozen Yogurt</h2>
+            <img src="http://localhost:8000/static/img/flavor4.jpg" alt="Ice Cream" width="100%" height="80%" onclick="saveImage()">
+        </div>
+        <!-- <div class="flavor">
+            <h2>Flavor Name 5</h2>
+            <img src="http://localhost:8000/static/img/flavor3.jpg" alt="Ice Cream" width="100%" height="80%" onclick="saveImage()">
+        </div>
+        <div class="flavor">
+            <h2>Flavor Name 6</h2>
+        <img src="http://localhost:8000/static/img/flavor3.jpg" alt="Ice Cream" width="100%" height="80%" onclick="saveImage()">
+
+        </div><div class="flavor">
+            <h2>Flavor Name 7</h2>
+            <img src="http://localhost:8000/static/img/flavor3.jpg" alt="Ice Cream" width="100%" height="80%" onclick="saveImage()">
+
+        </div>
+        <div class="flavor">
+            <h2>Flavor Name 8</h2>
+            <img src="http://localhost:8000/static/img/flavor3.jpg" alt="Ice Cream" width="100%" height="90%" onclick="saveImage()">
+
+        </div>
+        <div class="flavor">
+            <h2>Flavor Name 9</h2>
+            <img src="http://localhost:8000/static/img/flavor3.jpg" alt="Ice Cream" width="100%" height="90%" onclick="saveImage()">
+
+        </div> -->
+        
+    </section>
+</body>
+</html>
+
+
 {% endblock body %}
