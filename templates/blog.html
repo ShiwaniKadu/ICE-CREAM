@@ -1,4 +1,52 @@
 {% extends "base.html" %}
 {% block title %}Blog{% endblock title %}
 {% block body %}
+<style>
+    body {
+        background-color: rgb(21, 22, 22);
+
+        max-width: 100%;
+         border-radius: 5px;
+        font-family: Arial, sans-serif;
+    }
+    .position-relative {
+    position: relative;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #1a1717; /* Text color */
+    z-index: 1; /* Ensure text is above image */
+    padding: 10px;
+}
+
+.text-overlay h1 {
+    font-size: 4rem; /* Adjust as needed */
+}
+
+</style>
+<div class="container-fluid px-0 position-relative">
+    <img src="http://localhost:8000/static/img/icecream13.jpg" alt="Ice Cream" width="100%" height="100%" onclick="saveImage()">
+    <div class="text-overlay">
+        <div class="blog-section"></div>
+        <h1 class="text-center">The Delightful World of Ice Cream</h1>
+        <p>
+        Ice cream is one of the most beloved desserts around the world. Its creamy texture, combined with a myriad of flavors, makes it a delightful treat for people of all ages. Whether enjoyed in a cone on a hot summer day or as a decadent dessert after a meal, ice cream never fails to bring joy to its consumers.
+        <div class="blog-section"></div>
+        <h1 class="text-center">History of Ice Cream</h1>
+        The history of ice cream dates back centuries, with its origins traced to ancient civilizations such as the Chinese, Greeks, and Romans. However, it wasn't until the 17th century that ice cream as we know it began to take shape. In Europe, recipes for frozen desserts made with milk, cream, and sugar started to emerge, and ice cream quickly gained popularity among the aristocracy.
+        <div class="blog-section">
+       <h1 class="text-center">Varieties of Ice Cream</h1>
+        Today, there are countless varieties of ice cream available, catering to a wide range of tastes and preferences. From classic flavors like vanilla, chocolate, and strawberry to more exotic options such as mango, pistachio, and cookies and cream, the possibilities are endless. Additionally, there are dairy-free alternatives made from coconut milk, almond milk, or soy milk for those with dietary restrictions.
+        <div class="blog-section">
+        <h1 class="text-center">Homemade vs. Store-Bought</h1>
+        While store-bought ice cream offers convenience and a wide selection of flavors, many people prefer homemade ice cream for its fresh taste and quality ingredients. Making ice cream at home allows for experimentation with different flavors and add-ins, providing a truly personalized dessert experience. Plus, the process of churning ice cream by hand or using an ice cream maker can be a fun activity for the whole family to enjoy.
+        </p>
+        </div>
+    </div>
+</div>
 {% endblock body %}
